@@ -33,7 +33,7 @@ export default {
         console.log("你好");
       } else if (index == 2) {
         this.$router.push("/base");
-      } else if (index == 3) {
+      } else if (index == 4) {
         this.$router.push("/notes");
       } else if (index == 5) {
         this.$router.push("/shoppingCart");
