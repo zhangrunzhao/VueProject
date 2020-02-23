@@ -11,24 +11,51 @@ const routes = [
     component: Index
   },
   {
+    path: '/',
+    redirect:"/index"
+  },
+  {
     path: '/base',
     name: 'Base',
-    component: () => import(/* webpackChunkName: "about" */ '../views/base.vue')
+    component: () => import( '../views/base.vue')
   },
   {
     path: '/index/detail',
     name: 'Detail',
-    component: () => import(/* webpackChunkName: "about" */ '../views/detail.vue')
+    component: () => import( '../views/detail.vue')
   },
   {
     path: '/shoppingCart',
     name: 'ShoppingCart',
-    component: () => import(/* webpackChunkName: "about" */ '../views/shoppingCart.vue')
+    component: () => import( '../views/shoppingCart.vue')
   },
   {
     path: '/notes',
     name: 'Notes',
-    component: () => import(/* webpackChunkName: "about" */ '../views/notes.vue')
+    component: () => import('../views/notes.vue')
+  },
+  {
+    path: '/userLogin',
+    name: 'UserLogin',
+    component: () => import('../views/userLogin.vue')
+  },
+  {
+    path: '/userRegister',
+    name: 'UserRegister',
+    component: () => import( '../views/userRegister.vue')
+  },
+  {
+    path: '/user',
+    name: 'User',
+    redirect:"/user/myIndex",
+    component: () => import('../views/user.vue'),
+    children:[
+      {
+        path: 'myIndex',
+        name: 'MyIndex',
+        component: () => import('@/components/user/index.vue'),
+      }
+    ]
   }
 ]
 

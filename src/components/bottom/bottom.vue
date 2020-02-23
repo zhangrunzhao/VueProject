@@ -9,7 +9,7 @@ export default {};
 <style>
 .bottomContainer {
   /* height: 256px; */
-  height: 200px;
+  height: 130px;
   background-color: #333333;
 }
 </style>

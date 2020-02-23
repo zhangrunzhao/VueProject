@@ -20,7 +20,12 @@
       <div class="searchAndLog" disabled>
         <input class="search" type="text" placeholder="搜索一下吧" />
         <div class="el-icon-shopping-cart-2 shoppingCart" @click="handleSelect('5')"></div>
-        <div class="login" @click="handleSelect('6')">登录/注册</div>
+        <div class="loginAndRegister" v-if="!isLogin">
+          <span @click="handleSelect('6')">登录</span>/<span @click="handleSelect('7')">注册</span>
+        </div>
+        <div class="loginAndRegister" v-else>
+          <span @click="handleSelect('8')">我的</span> | <span @click="handleSelect('9')">退出</span>
+        </div>
       </div>
     </div>
   </div>
@@ -31,6 +36,7 @@ import {ref} from '@vue/composition-api'
 export default {
   data() {
     return {
+      isLogin: true,
       activeIndex: "1"
     };
   },
@@ -104,7 +110,11 @@ export default {
     padding-left: 8px;
     font-size: 30px;
 }
-.login{
+.loginAndRegister{
     min-width: 100px;
 }
+.loginAndRegister span:hover{
+  color: #9c92f9;
+}
+
 </style>

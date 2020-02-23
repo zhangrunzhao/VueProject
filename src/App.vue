@@ -2,14 +2,14 @@
   <div id="app">
     <nav-bar @getNavIndex="getNavIndex"></nav-bar>
     <router-view></router-view>
-    <bottom></bottom>
+    <!-- <bottom></bottom> -->
   </div>
 </template>
 
 <script>
 import { ref } from "@vue/composition-api";
 import navBar from "./components/navBar/navBar";
-import bottom from "./components/bottom/bottom";
+// import bottom from "./components/bottom/bottom";
 export default {
   setup(props, ctx) {
     const navIndex = ref(1);
@@ -37,12 +37,18 @@ export default {
         this.$router.push("/notes");
       } else if (index == 5) {
         this.$router.push("/shoppingCart");
+      } else if (index == 6) {
+        this.$router.push("/userLogin");
+      } else if (index == 7) {
+        this.$router.push("/userRegister");
+      } else if (index== 8) {
+        this.$router.push("/user");
       }
     }
   },
   components: {
-    navBar,
-    bottom
+    navBar
+    // bottom
   }
 };
 </script>

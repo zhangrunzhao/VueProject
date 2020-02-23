@@ -33,11 +33,11 @@ export default {
     box-sizing: border-box;
     padding: 10px;
 }
-.userBox{
+.UserCardContainer .userBox{
     display: flex;
     align-items: center;
 }
-.userBox span {
+.UserCardContainer .userBox span {
     margin-left: 15px;
     color: #FF8C8C;
     font-weight: 600;
