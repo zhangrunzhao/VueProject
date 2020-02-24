@@ -37,23 +37,33 @@ const routes = [
   {
     path: '/userLogin',
     name: 'UserLogin',
-    component: () => import('../views/userLogin.vue')
+    component: () => import('../views/user/userLogin.vue')
   },
   {
     path: '/userRegister',
     name: 'UserRegister',
-    component: () => import( '../views/userRegister.vue')
+    component: () => import( '../views/user/userRegister.vue')
   },
   {
     path: '/user',
     name: 'User',
     redirect:"/user/myIndex",
-    component: () => import('../views/user.vue'),
+    component: () => import('../views/user/user.vue'),
     children:[
       {
         path: 'myIndex',
         name: 'MyIndex',
         component: () => import('@/components/user/index.vue'),
+      },
+      {
+        path: 'myPasswordSafe',
+        name: 'MyPasswordSafe',
+        component: () => import('@/components/user/userPasswordSafe.vue'),
+      },
+      {
+        path: 'myInfo',
+        name: 'MyInfo',
+        component: () => import('@/components/user/personInfo.vue'),
       }
     ]
   }

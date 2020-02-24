@@ -1,9 +1,10 @@
 <template>
   <div class="userContainer">
     <div class="userBox">
-      <div class="userIndex">
-        <router-link class="userIndexText" :to="{name: 'MyIndex'}">我的主页</router-link>
-      </div>
+      
+        <router-link class="userIndexText" :to="{name: 'MyIndex'}"><div class="userIndex">
+        我的主页</div></router-link>
+      
       <div class="userListBox">
         <div class="userList">
           <div>我的发表</div>
@@ -18,8 +19,8 @@
         </div>
         <div class="userList">
           <div>个人设置</div>
-          <span>个人资料</span>
-          <span>密码安全</span>
+          <router-link  class="userListItem" :to="{name: 'MyInfo'}">个人资料</router-link>
+          <router-link  class="userListItem" :to="{name: 'MyPasswordSafe'}">密码安全</router-link>
         </div>
       </div>
     </div>
@@ -72,5 +73,15 @@ export default {};
 .userContainer .userList span {
   margin: 6px 0;
   color: #999;
+}
+.userContainer .userList span:hover{
+  color:  #ff4d4d;
+}
+.userContainer .userListItem{
+  margin: 6px 0;
+  color: #999;
+}
+.userContainer .userListItem:hover{
+  color:  #ff4d4d;
 }
 </style>

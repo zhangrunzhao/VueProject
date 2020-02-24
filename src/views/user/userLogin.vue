@@ -40,6 +40,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+import {GetSms} from '@/api/userLogin'
 export default {
   data() {
     var checkAge = (rule, value, callback) => {
@@ -92,6 +94,18 @@ export default {
   },
   methods: {
     submitForm(formName) {
+
+      GetSms();
+  //     axios.get('http://127.0.0.1:3000/user')
+  // .then(function (response) {
+  //   console.log(response);
+  // })
+  // .catch(function (error) {
+  //   console.log(error);
+  // });
+
+
+
       this.$refs[formName].validate(valid => {
         if (valid) {
           alert("submit!");
