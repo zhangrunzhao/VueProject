@@ -1,10 +1,6 @@
 <template>
   <div class="baseNavContainer">
-    <div class="baseNavTopic">
-      基地
-      <i class="el-icon-arrow-right"></i>
-      <span>推荐</span>
-    </div>
+    <nav-topic :topics="['基地','推荐']"></nav-topic>
     <div class="baseNavContent">
       <span
         :class="navItemIndex==index?'select':''"
@@ -33,6 +29,7 @@
 </template>
 
 <script>
+import navTopic from '../topicNav'
 import { ref } from "@vue/composition-api";
 export default {
   setup() {
@@ -58,6 +55,9 @@ export default {
       change,
       show
     };
+  },
+  components:{
+    navTopic
   }
 };
 </script>
@@ -68,13 +68,7 @@ export default {
   padding: 16px 0;
   box-sizing: border-box;
 }
-.baseNavTopic {
-  font-size: 12px;
-  padding-left: 2px;
-}
-.baseNavTopic span {
-  color: #9c92f9;
-}
+
 .baseNavContent {
   position: relative;
   display: flex;

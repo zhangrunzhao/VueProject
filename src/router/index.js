@@ -17,7 +17,12 @@ const routes = [
   {
     path: '/base',
     name: 'Base',
-    component: () => import( '../views/base.vue')
+    component: () => import( '../views/base/base.vue'),
+  },
+  {
+    path: '/base/invitation',
+    name: 'Invitation',
+    component: () => import('../views/base/invitation.vue')
   },
   {
     path: '/index/detail',

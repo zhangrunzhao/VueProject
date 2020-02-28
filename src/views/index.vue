@@ -43,7 +43,7 @@ export default {
 <style>
 .indexContainer {
   min-width: 800px;
-  max-width: 950px;
+  max-width: 960px;
   margin: 0 auto;
   margin-top: 15px;
   /* padding: 0 280px; */

@@ -27,10 +27,10 @@ import { ref } from "@vue/composition-api";
 export default {
   setup() {
     const imgData = ref([
-      require("../assets/1.jpg"),
-      require("../assets/2.jpg"),
-      require("../assets/3.jpg"),
-      require("../assets/4.jpg")
+      require("../../assets/1.jpg"),
+      require("../../assets/2.jpg"),
+      require("../../assets/3.jpg"),
+      require("../../assets/4.jpg")
     ]);
     const hotModuData = ref(['COS','游戏','番剧'])
     const otherModuData = ref(['COS','游戏','番剧','宅舞','裸奔'])
