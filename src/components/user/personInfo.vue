@@ -1,7 +1,7 @@
 <template>
   <div class="personInfoContainer">
     <div class="userInfoTopic">个人资料设置</div>
-    <form action="/personInfo">
+    <form action="user/personInfo">
       <div>
         <label for="username">用户名</label>
         <input type="text" name="username" class="perInfoName" id="username" placeholder="请输入用户名"/>
@@ -17,6 +17,9 @@
       <div>
         <label for="email">邮箱</label>
         <input type="text" name="email" class="perInfoEmail" id="email" placeholder="请输入邮箱"  />
+      </div>
+      <div class="submitBtn">
+        <input type="submit">
       </div>
     </form>
   </div>
@@ -34,6 +37,10 @@ export default {};
   padding: 0 18px;
   font-size: 11px;
   color: rgb(128, 126, 126);
+  padding-bottom: 18px;
+}
+.personInfoContainer form div{
+  margin-top: 12px;
 }
 .userInfoTopic {
   height: 40px;
@@ -56,6 +63,7 @@ export default {};
 .personInfoContainer textarea{
     width: 288px;
     resize: none;
+    height: 64px;
 }
 .personInfoContainer label {
   width: 48px;
@@ -67,9 +75,20 @@ export default {};
 .perInfoName{
     width: 160px;
 }
-.perInfoIntroduce{
-    width: 288px;
-    resize: none;
-}
 
+.personInfoContainer .submitBtn{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  
+}
+.personInfoContainer .submitBtn input{
+  width: 64px;
+  height: 28px;
+  margin-left: 0;
+  color: #ffffff;
+  border-radius: 5px;
+  background-color:  #ff4d4d;
+  user-select: none;
+}
 </style>

@@ -36,7 +36,7 @@ import {ref} from '@vue/composition-api'
 export default {
   data() {
     return {
-      isLogin: true,
+      isLogin: false,
       activeIndex: "1"
     };
   },
@@ -57,7 +57,8 @@ export default {
   box-shadow: 2px 0px 16px #cccccc;
 }
 .navBox {
-  padding: 0 290px !important;
+  max-width: 950px;
+  margin: 0 auto;
   display: flex;
 }
 .logo {

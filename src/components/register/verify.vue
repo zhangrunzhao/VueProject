@@ -45,18 +45,18 @@ export default {
         if(!this.confirmSuccess && this.width>=0){
             this.width = e.clientX - this.beginClientX;
         }
-        if (this.width >= this.maxwidth) {
+        if (this.width >= this.maxwidth && !this.confirmSuccess) {
           this.confirmSuccess = true;
           this.btnImg = "handler_ok_bg";
           this.confirmWords="验证完毕"
+          this.$emit("isReady",true)
         }
       }
     },
     mouseupFn() {
-      console.log("停止点击");
       if(!this.confirmSuccess){
         this.isDown = false;
-      this.width = 0;
+        this.width = 0;
       }
       
     }

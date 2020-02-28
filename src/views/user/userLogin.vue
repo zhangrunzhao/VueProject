@@ -12,22 +12,16 @@
         class="demo-ruleForm"
       >
         <el-form-item label="会员名:" prop="pass">
-          <el-input type="password" placeholder="请输入会员名" v-model="ruleForm.pass" autocomplete="off"></el-input>
+          <el-input type="username" placeholder="请输入会员名" v-model="ruleForm.username" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="登陆密码:" prop="checkPass">
           <el-input
             type="password"
             placeholder="请输入登陆密码"
-            v-model="ruleForm.checkPass"
+            v-model="ruleForm.password"
             autocomplete="off"
           ></el-input>
         </el-form-item>
-        <!-- <el-form-item label="年龄:" prop="age">
-          <el-input v-model.number="ruleForm.age"></el-input>
-        </el-form-item>-->
-
-        <!-- <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
-        <el-button @click="resetForm('ruleForm')">重置</el-button>-->
       </el-form>
     </div>
     <div class="submitBtn" @click="submitForm('ruleForm')">提交</div>
@@ -41,25 +35,9 @@
 
 <script>
 import axios from 'axios';
-import {GetSms} from '@/api/userLogin'
+import {UserLogin} from '@/api/userLogin'
 export default {
   data() {
-    var checkAge = (rule, value, callback) => {
-      if (!value) {
-        return callback(new Error("年龄不能为空"));
-      }
-      setTimeout(() => {
-        if (!Number.isInteger(value)) {
-          callback(new Error("请输入数字值"));
-        } else {
-          if (value < 18) {
-            callback(new Error("必须年满18岁"));
-          } else {
-            callback();
-          }
-        }
-      }, 1000);
-    };
     var validatePass = (rule, value, callback) => {
       if (value === "") {
         callback(new Error("请输入密码"));
@@ -81,31 +59,19 @@ export default {
     };
     return {
       ruleForm: {
-        pass: "",
-        checkPass: "",
-        age: ""
+        username: "",
+        password: ""
       },
       rules: {
         pass: [{ validator: validatePass, trigger: "blur" }],
-        checkPass: [{ validator: validatePass2, trigger: "blur" }],
-        age: [{ validator: checkAge, trigger: "blur" }]
+        checkPass: [{ validator: validatePass2, trigger: "blur" }]
       }
     };
   },
   methods: {
     submitForm(formName) {
 
-      GetSms();
-  //     axios.get('http://127.0.0.1:3000/user')
-  // .then(function (response) {
-  //   console.log(response);
-  // })
-  // .catch(function (error) {
-  //   console.log(error);
-  // });
-
-
-
+      UserLogin(this.ruleForm);
       this.$refs[formName].validate(valid => {
         if (valid) {
           alert("submit!");
