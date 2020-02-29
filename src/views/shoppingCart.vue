@@ -71,7 +71,6 @@ export default {
       this.isIndeterminate = false;
     },
     handleCheckedCitiesChange(value) {
-      console.log(value);
       let checkedCount = value.length;
       this.checkAll = checkedCount === this.cities.length;
       this.isIndeterminate =
