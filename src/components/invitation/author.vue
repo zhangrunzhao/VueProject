@@ -64,5 +64,6 @@ export default {};
 .authorName{
     font-size: 14px;
     color: #101010;
+    font-weight: bold;
 }
 </style>
